@@ -1,4 +1,7 @@
 class HashMap:
+    def __init__(self, size):
+        self.hashmap = [None for i in range(size)]
+
     def insert(self, key, value):
         self.resize()
         index = self.key_to_index(key)
@@ -25,11 +28,6 @@ class HashMap:
             if slot is not None:
                 filled_slots += 1
         return filled_slots / len(self.hashmap)
-
-    # don't touch below this line
-
-    def __init__(self, size):
-        self.hashmap = [None for i in range(size)]
 
     def key_to_index(self, key):
         sum = 0
