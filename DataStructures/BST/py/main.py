@@ -21,3 +21,14 @@ class BSTNode:
             return
         self.left.insert(val)
         return
+    
+    def get_min(self):
+        if self.left:
+            return self.left.get_min()
+        return self.val
+
+    def get_max(self):
+        if self.right:
+            return self.right.get_max()
+        return self.val
+    

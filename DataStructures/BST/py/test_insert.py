@@ -2,14 +2,12 @@ import random
 from main import *
 from user import *
 from ref import *
+from utils import print_tree, format_tree_string
 
-run_cases = [
+cases = [
     (3),
     (5),
-]
-
-submit_cases = run_cases + [
-    (10),
+    (10)
 ]
 
 
@@ -42,8 +40,7 @@ def test(num_users):
 def test_insert():
     passed = 0
     failed = 0
-    skipped = len(submit_cases) - len(test_cases)
-    for test_case in test_cases:
+    for test_case in cases:
         correct = test(test_case)
         if correct:
             passed += 1
@@ -53,27 +50,8 @@ def test_insert():
         print("============= PASS ==============")
     else:
         print("============= FAIL ==============")
-    if skipped > 0:
-        print(f"{passed} passed, {failed} failed, {skipped} skipped")
-    else:
-        print(f"{passed} passed, {failed} failed")
-
-
-def print_tree(bst_node):
-    lines = []
-    format_tree_string(bst_node, lines)
-    print("\n".join(lines))
-
-
-def format_tree_string(bst_node, lines, level=0):
-    if bst_node is not None:
-        format_tree_string(bst_node.right, lines, level + 1)
-        lines.append(" " * 4 * level + "> " + str(bst_node.val))
-        format_tree_string(bst_node.left, lines, level + 1)
-
-
-test_cases = submit_cases
-if "__RUN__" in globals():
-    test_cases = run_cases
+        quit('test_add_words.py failed')
+    print("Test results:")
+    print(f"{passed} passed, {failed} failed")
 
 test_insert()
