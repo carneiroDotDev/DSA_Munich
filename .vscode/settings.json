@@ -17,8 +17,8 @@
         "statusBarItem.remoteForeground": "#15202b",
         "titleBar.inactiveBackground": "#42b88399",
         "titleBar.inactiveForeground": "#15202b99",
-        "tab.activeBorderTop": "#eb0202", // Active Tab Top Highlighting
-        "tab.activeBorder": "#eb0202" // Active Tab Top Highlighting
+        "tab.activeBorderTop": "#eb0202",
+        "tab.activeBorder": "#eb0202"
     },
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
